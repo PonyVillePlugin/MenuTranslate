@@ -5,7 +5,7 @@
 // @name:zh-CN   PonyTown界面翻译
 // @name:zh-TW   PonyTown界面翻譯
 // @namespace    https://pony.town/
-// @version      0.0.1-alpha
+// @version      0.0.2-alpha
 // @description        Translate almost all the UI text you can see!!
 // @description:en     Translate almost all the UI text you can see!!
 // @description:zh     翻译几乎所有你能看到的UI文本
@@ -25,7 +25,7 @@
 
 (function() {
     'use strict';
-    const version = "0.0.1-alpha";
+    const version = "0.0.2-alpha";
     const isasync = true;
     const ponybot = false;
 
@@ -345,6 +345,7 @@
             "Chatbox settings…": "聊天框设置…",
             "Recently closed whispers": "最近关闭的私聊",
             "Close whispers…": "关闭私聊…",
+            "New unreads": "新的未读",
             "Local tab options": "本地标签选项",
             "Personal tab options": "个人标签选项",
             "Party tab options": "派对标签选项",
@@ -381,17 +382,28 @@
             "These slots can be unlocked by supporting the game on Patreon": "通过在 Patreon 上支持游戏可以解锁这些槽位",
             "Join party": "加入派对",
             "Join party {value}": "加入派对 {value}",
-            "Create a new party or join an existing party via an invite code": "创建一个新派对或通过邀请码加入现有派对",
+            "You've been invited to join": "你已被邀请加入",
+            "Successfully joined the party": "成功加入派对",
+            "You're already in this party.": "你已经在这个派对中.",
+            "Server: {value}": "服务器: {value}",
+            "\nMembers: {value}": "\n成员: {value}",
+            "Create a new party or join an existing party via an invite code": "创建一个新派对或通过邀请代码加入现有派对",
             "Create new party": "创建新派对",
             "Are you sure you want to create a new party?": "你确定要创建一个新派对吗?",
             "You are already in a party. Creating a new party will remove you from the current party. Are you sure?": "你已经在一个派对中. 创建新派对将把你从当前派对中移除. 你确定要继续吗?",
-            "Join via invite code": "通过邀请码加入",
             'Another player can also invite you by selecting the "Invite to party" option on your player profile.': "其他玩家也可以通过在你的玩家档案上选择 '邀请加入派对' 选项来邀请你.",
+            "Invite code": "邀请代码",
+            "Invite link": "邀请链接",
+            "Join via invite code": "通过邀请代码加入",
+            "Join via invite link": "通过邀请链接加入",
             "Use party invite": "使用派对邀请",
-            "Error joining party": "加入派对时出错",
+            "Use party invite link": "使用派对邀请链接",
             "Enter party invite code": "输入派对邀请代码",
+            "Enter party invite link": "输入派对邀请链接",
+            "Error joining party": "加入派对时出错",
             "Invalid party invite code format, a valid code looks like 7AVxFSaJ": "无效的派对邀请代码格式, 有效的代码示例 7AVxFSaJ", 
             "Invalid party invite code": "无效的派对邀请代码", 
+            "Invalid party invite": "无效的派对邀请", 
             "You're already in a party, using a party invite will remove you from the current party, are you sure?": "你已经在一个派对中, 使用派对邀请将会把你从当前派对中移除, 你确定要继续吗?", 
             "Confirm leaving party": "确认离开派对", 
 
@@ -1535,12 +1547,14 @@
 
             "Show all": "显示全部",
             
+            "Promote to leader": "提升为队长",
             "You are party leader": "你是派对队长",
             "Notify party": "通知派对",
             "Rename party": "重命名派对",
             "Manage invite": "管理邀请",
             "Lock leader": "锁定队长",
             "Lock map editing": "锁定地图编辑",
+            "Lock placing held": "锁定手持放置",
             "Use own map": "使用自己的地图",
             "Remove from party": "移出派对",
             "Hide offline members": "隐藏离线成员",
@@ -1548,9 +1562,20 @@
             "Leave party": "离开派对",
             "Disband party": "解散派对",
             "Party leader": "派队队长",
+            "Party permissions:": "派对权限",
             "Full permissions": "全部权限",
             "No permissions": "无权限",
             "Permissions:": "权限:",
+            "Invite members": "邀请成员",
+            "Remove members": "移除成员",
+            "Send notifications": "发送通知",
+            "Edit locked map": "编辑锁定地图",
+            "Lock/unlock map": "锁定/解锁 地图",
+            "Manage permissions": "管理权限",
+            "Give all permissions": "授予所有权限",
+            "Revoke all permissions": "撤销所有权限",
+            "Give this player all permissions": "授予此玩家所有权限",
+            "Revoke all permissions from this player": "撤销此玩家所有权限",
             "- Invite party members": "- 邀请派对成员",
             "- Send notifications": "- 发送邀请",
             "- Save maps": "- 保存地图",
@@ -1565,6 +1590,7 @@
             "Locking party leader prevents automatically changing leader when current leader goes offline": "锁定派队队长可防止在当前派队队长离线时自动更换派队队长",
             "Only leader can lock party leader": "只有派队队长可以锁定派队队长",
             "Locking map editing prevents players from building without permission": "锁定地图编辑可以防止玩家在未经允许的情况下建造",
+            "Locking placing held items prevents players from placing or picking up held items": "锁定手持放置物品可以防止玩家放置或拾取手持物品",
             "Party leader always uses own map": "派对队长永远使用自己的地图",
             "Use own party map instead of leader's when on the island": "进入派对岛时使用自己的派对地图而不是队长的",
             "You can't remove party leader from party": "你不能派对队长从派对中移除",
@@ -1573,7 +1599,9 @@
             "Notification text": "通知文本",
             "Notification sent to all online members.": "通知会发送给所有在线成员.",
             "Manage party invite": "管理派对邀请",
+            "Manage party invite link": "管理派对邀请链接",
             "Delete invite": "删除邀请",
+            "Share this invite link to allow other players join the party at any time. Players hidden by the current leader will be unable to use this invite link.": "分享此邀请链接以允许其他玩家随时加入派对. 当前队长隐藏的玩家将无法使用此邀请链接.",
             "Party invite does not exist": "派对邀请不存在.",
             "Share this code to allow other players join the party at any time. Players hidden by the current leader will be unable to use this code.": "分享此代码以允许其他玩家随时加入派对. 被当前队长隐藏的玩家将无法使用此代码.",
             "Confirm deleting invite": "确认删除邀请",
@@ -1583,9 +1611,9 @@
             "Join limit": "加入时限",
             "Join limit:": "加入时限:",
             "Joined times:": "加入次数:",
-            "Code:": "邀请码:",
+            "Code:": "邀请代码:",
             "Confirm leave": "确认离开",
-            "Copy invite code to clipboard": "将邀请码复制到剪贴板",
+            "Copy invite code to clipboard": "将邀请代码复制到剪贴板",
             'Confirm disbanding party "\uFEFF': '确认解散派对 "\uFEFF',
             "This action cannot be reversed.": "此操作无法撤销.",
             "Are you sure you want to disband the whole party?": "你确定要解散整个派对吗?",
@@ -1798,6 +1826,7 @@
             "Copy": "复制",
             "Save": "保存",
             "Load": "加载",
+            "Join": "加入",
             "Play": "游玩",
             "play": "游玩",
             "New": "新建",
