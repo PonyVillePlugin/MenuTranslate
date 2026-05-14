@@ -1,0 +1,9 @@
+{
+    "Added construction site": "新增建筑工地场景",
+    "Improved some UI": "优化部分界面UI",
+    "Fixed friend notes not getting saved": "修复好友备注无法保存的问题",
+    "Fixed selecting suggested command not respecting current command alias": "修复点击推荐指令时不兼容当前指令别名的问题",
+    "Fixed some map errors": "修复部分地图异常问题",
+    "Optimized game performance": "优化游戏运行性能",
+    "Optimized server performance": "优化服务器运行性能"
+}
