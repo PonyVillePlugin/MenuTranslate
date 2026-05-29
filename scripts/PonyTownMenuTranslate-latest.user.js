@@ -5,9 +5,9 @@
 // @name:zh-CN   PonyTown界面翻译
 // @name:zh-TW   PonyTown界面翻譯
 // @namespace    https://pony.town/
-// @version      0.0.2-alpha
-// @description        Translate almost all the UI text you can see!!
-// @description:en     Translate almost all the UI text you can see!!
+// @version      0.0.3-alpha
+// @description        Translate almost all the UI text you can see.
+// @description:en     Translate almost all the UI text you can see.
 // @description:zh     翻译几乎所有你能看到的UI文本
 // @description:zh-CN  翻译几乎所有你能看到的UI文本
 // @description:zh-TW  翻譯幾乎所有你能看到的UI文本
@@ -25,7 +25,7 @@
 
 (function() {
     'use strict';
-    const version = "0.0.2-alpha";
+    const version = "0.0.3-alpha";
     const isasync = true;
     const ponybot = false;
 
@@ -201,6 +201,7 @@
             "friend":"好友",
             "Pinned in your friend list":"置顶在你的好友列表",
             "In your friend list":"在你的好友列表",
+            "In your party":"在你的派对",
             "party":"派对",
             "blocked":"已屏蔽",
             "This player is hidden":"此玩家已隐藏",
@@ -1104,7 +1105,6 @@
             "You appear to be offline.\n": "你似乎处于离线状态.\n",
             " Server is under heavy load. Retrying, please wait": " 服务器负载过重. 正在重试, 请稍候",
             " Cannot connect to the server. Retrying, please wait": " 无法连接到服务器. 正在重试, 请稍候",
-            "Left due to inactivity": "因不活跃而离开",
             "Please check your internet connection.": "请检查你的网络连接.",
             "Failed to load game assets {x}.": "加载游戏资源 {x} 失败.",
             "Make sure you have the latest version installed.": "确保你安装了最新版本.",
@@ -1116,7 +1116,18 @@
             "Your client version is outdated.": "你的客户端版本已过时.",
             "Your client version is outdated.\n": "你的客户端版本已过时.\n",
             " to be able to play.": "以继续游玩.",
+            "Kicked for swearing, spamming or inappropriate language on a safe server": "因在安全服务器内谩骂、刷屏或言语不当，您已被踢出", 
 
+            "Left due to inactivity": "因不活跃而离开",
+            "Left due to inactivity": "挂机时间过长，已自动退出",
+            "Left due to joining from another browser or tab": "您已从另一浏览器或标签页加入游戏",
+            "Left due to game server restart": "由于服务器重启，您已断开连接",
+            "Left due to getting stuck": "因被困住而退出游戏",
+            "Left due to losing connection to the server": "您与服务器的连接已丢失",
+            "Left due to server error": "服务器端发生错误，已强制断线",
+            "Left due to unstable connection to the server": "与服务器的连接不稳定，已自动断开连接",
+            "Left due to triggering server action rate limits": "动作过于频繁，触发服务器端速率限制，已强制断线",
+            
             "Invalid join token. Try refreshing the page.": "无效的加入令牌. 请尝试刷新页面.",
             "Join token has expired. Try joining again. If you continue getting the same error, try refreshing the page and checking your Internet connection. If you're using a VPN, try disabling it or switching to a different VPN provider.": "加入令牌已过期. 请重新尝试加入. 如果你继续收到相同的错误, 请尝试刷新页面并检查你的网络连接. 如果你正在使用 VPN, 请尝试禁用它或切换到其他 VPN 提供商.",
             "Too many reconnect attempts. Try checking your Internet connection.": "重连尝试次数过多. 请检查你的网络连接.",
@@ -1393,6 +1404,7 @@
             "{x} - swap to a character": "{x} - 切换至一个角色{n}",
             "{x} - sends a notification to online party members": "{x} - 向在线派对成员发送通知",
             "{x} - sends a notification to online party members{n}": "{x} - 向在线派对成员发送通知{n}",
+            "{x} - join party using party link": "{x} - 使用派对链接加入派对",
             "{x} - lock leader to prevent it from changing when current leader goes offline": "{x} - 锁定队长, 防止当前派对队长离线时派对队长变更",
             "{x} - unlock leader to allow it to change when current leader goes offline": "{x} - 解锁队长, 允许当前派对队长离线时变更派对队长",
             "{x} - hold toy, number of a collectable toy or 0 to drop current toy": "{x} - 持有玩具, 输入可收集玩具的编号, 或输入0以丢弃当前玩具",
@@ -1440,6 +1452,10 @@
             "{x} - set map time": "{x} - 设置地图时间",
             "{x} - pause map time": "{x} - 暂停地图时间",
             "{x} - unpause map time": "{x} - 取消暂停地图时间",
+            "{x} - prevent other players from editing map": "{x} - 防止其他玩家编辑地图",
+            "{x} - allow other players to edit the map": "{x} - 允许其他玩家编辑地图",
+            "{x} - prevent other players from placing or picking held items on the map": "{x} - 防止其他玩家在地图上放置或拾取持有的物品",
+            "{x} - allow other players to place and pick up held items on the map": "{x} - 允许其他玩家在地图上放置和拾取持有的物品",
             "{x} - prevent other players from changing map": "{x} - 防止其他玩家更改地图",
             "{x} - allow other players to change map": "{x} - 允许其他玩家更改地图",
             "{x} - lists all saved maps{n}": "{x} - 列出所有已保存的地图{n}",
@@ -1572,6 +1588,7 @@
             "Edit locked map": "编辑锁定地图",
             "Lock/unlock map": "锁定/解锁 地图",
             "Manage permissions": "管理权限",
+            "All permissions": "所有权限",
             "Give all permissions": "授予所有权限",
             "Revoke all permissions": "撤销所有权限",
             "Give this player all permissions": "授予此玩家所有权限",
@@ -1609,7 +1626,6 @@
             "Expires in": "到期时间",
             "Expires:": "到期时限:",
             "Join limit": "加入时限",
-            "Join limit:": "加入时限:",
             "Joined times:": "加入次数:",
             "Code:": "邀请代码:",
             "Confirm leave": "确认离开",
@@ -1618,7 +1634,7 @@
             "This action cannot be reversed.": "此操作无法撤销.",
             "Are you sure you want to disband the whole party?": "你确定要解散整个派对吗?",
 
-            "15 min": "15分",
+            "15 min": "15分钟",
             "30 minutes 1 second": "30分钟1秒",
             "{m} minutes {s} second": "{m} 分钟 {s} 秒",
             "3 hours": "3 小时",
