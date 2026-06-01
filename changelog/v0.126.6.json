@@ -1,0 +1,14 @@
+{
+    "It's summer!": "夏天来了!",
+    "Enabled pearl collection": "开放珍珠收集玩法",
+    "Added ability to display any text characters when using smooth chat bubbles": "新增平滑聊天气泡全文字字符显示功能",
+    "Added option to use smooth chat bubbles to game settings": "新增游戏设置平滑聊天气泡选项",
+    "Added scale smooth chat bubbles option to game settings": "新增游戏设置平滑聊天气泡缩放选项",
+    "Added ability to navigate recently used commands by using up/down arrow keys": "新增上下方向键切换历史指令功能",
+    "Added summer themed sit spots around the map": "新增全图夏日风格休憩点位",
+    "Improved notification when whispering offline player": "优化向离线玩家私聊的提示效果",
+    "Fixed getting kicked with \"cannot read properties of undefined\" error in some cases": "修复部分场景因触发 \"无法读取未定义的属性\" 报错而被踢出的问题",
+    "Fixed some UI issues": "修复部分界面UI异常问题",
+    "Fixed disabling chat bubbles": "修复聊天气泡关闭失效问题",
+    "Optimized game performance": "优化游戏运行性能"
+}
