@@ -5,7 +5,7 @@
 // @name:zh-CN   PonyTown界面翻译
 // @name:zh-TW   PonyTown界面翻譯
 // @namespace    https://pony.town/
-// @version      0.0.3-alpha
+// @version      0.0.4-alpha
 // @description        Translate almost all the UI text you can see.
 // @description:en     Translate almost all the UI text you can see.
 // @description:zh     翻译几乎所有你能看到的UI文本
@@ -25,7 +25,7 @@
 
 (function() {
     'use strict';
-    const version = "0.0.3-alpha";
+    const version = "0.0.4-alpha";
     const isasync = true;
     const ponybot = false;
 
@@ -637,6 +637,8 @@
             "minutes": "分钟",
             "Custom...": "自定义...",
             "Unlimited": "无限制",
+            "Always": "永远",
+            "always": "永远",
             "Never": "永不",
             " never": " 永不",
             "Friends, Party and Whispers": "好友 派对 私聊",
@@ -708,6 +710,7 @@
             "Allow whispers from": "允许私聊来自",
             "Enable accepting whispers from other players": "启用接受来自其他玩家的私聊",
             "Make chatlog links clickable from": "使聊天记录链接可点击来自",
+            "Allow clickable external links from": "允许可点击的外部链接来自",
             "Lets you click on links sent in chat from other players and yourself.": "允许你点击其他玩家和自己在聊天中发送的链接.",
             "Enable text expressions for": "启用文本表情为",
             "Enable showing your expressions for messages containing text expressions": "为包含文本表情的消息启用显示你的表情",
@@ -717,6 +720,12 @@
             "Enables showing indicators when players are typing in chat (also enables showing indicator of you typing from others)": "当玩家在聊天中输入时显示输入状态 (也会启用显示他人看到你正在输入的状态)",
             "Enable chat bubble stacks for": "启用聊天气泡堆叠为",
             "Disabling makes old chat bubble disappear immediately upon receiving a new message": "禁用后收到新消息时旧聊天气泡会立即消失",
+            "Smooth chat bubbles": "平滑聊天气泡",
+            "Display these chat bubbles with smooth text and system fonts": "使用平滑文字和系统字体显示这些聊天气泡",
+            "When missing characters": "当缺失字符时",
+            "When missing or complex characters": "当缺失或复杂字符时",
+            "Smooth chat bubbles scale": "平滑聊天气泡缩放",
+            "Change the font of smooth chat bubbles to be bigger or smaller": "将平滑聊天气泡的字体更改为更大或更小",
             "Chat bubbles range": "聊天气泡范围",
             "entire screen": "全屏",
             "Only show chat bubbles from players near you (doesn't affect private messages)": "仅显示来自附近玩家的聊天气泡 (不影响私聊消息)",
@@ -2107,6 +2116,9 @@
             originalSet("all", newAll);
             return this;
         };
+
+        let changelogLoaded = false;
+        let changelogObserver = null;
         
         function getGameVersion() {
             return document.body.getAttribute('data-version');
@@ -2134,7 +2146,6 @@
         async function loadAllChangelogs() {
             const versions = getChangelogVersions();
             const urls = getChangelogUrls();
-            console.log(urls)
     
             urls.forEach(async (url, index) => {
                 const version = versions[index];
@@ -2150,7 +2161,27 @@
             });
         }
 
-        return { changelog, loadAllChangelogs };
+        function watchChangelog() {
+            PonyChangelogModule.loadAllChangelogs();
+
+            changelogObserver = new MutationObserver(() => {
+                const changelog = document.querySelector('changelog-modal div.modal-body');
+                if (changelog && !changelogLoaded) {
+                    PonyChangelogModule.loadAllChangelogs();
+                    changelogLoaded = true;
+                    changelogObserver.disconnect();
+                }
+            });
+
+            changelogObserver.observe(document.body, {
+                childList: true,
+                subtree: false,
+                characterData: false,
+                attributes: false
+            });
+        }
+
+        return { changelog, loadAllChangelogs, watchChangelog };
     })();
 
     const PonyVersionModule = (() => {
@@ -2185,8 +2216,8 @@
         
         function runScript() {
             runAfterDOMLoaded(function() {
-                PonyChangelogModule.loadAllChangelogs();
                 PonyTranslateModule.startTranslate();
+                PonyChangelogModule.watchChangelog();
             });
         }
 
