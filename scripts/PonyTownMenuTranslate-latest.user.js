@@ -5,7 +5,7 @@
 // @name:zh-CN   PonyTown界面翻译
 // @name:zh-TW   PonyTown界面翻譯
 // @namespace    https://pony.town/
-// @version      0.0.4-alpha
+// @version      0.0.5-alpha
 // @description        Translate almost all the UI text you can see.
 // @description:en     Translate almost all the UI text you can see.
 // @description:zh     翻译几乎所有你能看到的UI文本
@@ -25,7 +25,7 @@
 
 (function() {
     'use strict';
-    const version = "0.0.4-alpha";
+    const version = "0.0.5-alpha";
     const isasync = true;
     const ponybot = false;
 
@@ -136,8 +136,11 @@
 
             "(last used)": "(上次使用)",
             "Map Settings": "地图设置",
+            
+            "Create new map": "创建新地图",
             "Save map": "保存地图",
             "Load map": "加载地图",
+            "Delete map": "删除地图",
             "Reset map": "还原地图",
             "Clear map": "清空地图",
             "Auto season": "自动季节",
@@ -155,6 +158,15 @@
             "Sunset (paused)": "日落 (暂停)",
             "Sunrise (paused)": "日出 (暂停)",
             "Tall walls": "高墙",
+
+            "Confirm creating new map": "确认创建新地图",
+            "Cancel creating new map": "取消创建新地图",
+            "Confirm overwriting map": "确认覆盖地图",
+            "Cancel overwriting map": "取消覆盖地图",
+            "Confirm loading map": "确认加载地图",
+            "Cancel loading map": "取消加载地图",
+            "Confirm deleting map": "确认删除地图",
+            "Cancel deleting map": "取消删除地图",
 
             "Save map into slot {x}": "保存地图到槽位 {x} ",
             "Load map from slot {x}": "从槽位 {x} 加载地图",
@@ -546,6 +558,7 @@
             "Plush name": "玩偶名称",
             "Lock to plush base color": "锁定为玩偶基色",
             "Plush base color": "玩偶基色",
+            "Plush base color ": "玩偶基色 ",
             "Plush front horn": "玩偶独角",
             "Plush side horns": "玩偶侧角",
             "Plush ears": "玩偶耳朵",
@@ -889,6 +902,15 @@
             "Redo": "重做",
             "Change color/variant while placing": "放置时更改颜色/变体",
             "Toggle auto wall display mode": "开关自动墙体显示模式",
+
+            "Move objects": "移动物体",
+            "Remove objects": "删除物体",
+            "Clone objects": "克隆物体",
+            "Color objects": "物体颜色",
+            "Change object seasons": "更改物体季节",
+            "Rotate object": "旋转物体",
+            "Remove walls": "删除墙体",
+            "Toggle compact mode": "切换精简模式",
             
             "Building tools": "建造工具",
             "Hammer, Brush, Rake (place object, change object color/season)": "锤子, 刷子, 耙子 (放置物体, 更改物体颜色/季节)",
@@ -1125,17 +1147,17 @@
             "Your client version is outdated.": "你的客户端版本已过时.",
             "Your client version is outdated.\n": "你的客户端版本已过时.\n",
             " to be able to play.": "以继续游玩.",
-            "Kicked for swearing, spamming or inappropriate language on a safe server": "因在安全服务器内谩骂、刷屏或言语不当，您已被踢出", 
+            "Kicked for swearing, spamming or inappropriate language on a safe server": "因在安全服务器内谩骂或刷屏或言语不当, 您已被踢出", 
 
             "Left due to inactivity": "因不活跃而离开",
-            "Left due to inactivity": "挂机时间过长，已自动退出",
+            "Left due to inactivity": "挂机时间过长, 已自动退出",
             "Left due to joining from another browser or tab": "您已从另一浏览器或标签页加入游戏",
-            "Left due to game server restart": "由于服务器重启，您已断开连接",
+            "Left due to game server restart": "由于服务器重启, 您已断开连接",
             "Left due to getting stuck": "因被困住而退出游戏",
             "Left due to losing connection to the server": "您与服务器的连接已丢失",
-            "Left due to server error": "服务器端发生错误，已强制断线",
-            "Left due to unstable connection to the server": "与服务器的连接不稳定，已自动断开连接",
-            "Left due to triggering server action rate limits": "动作过于频繁，触发服务器端速率限制，已强制断线",
+            "Left due to server error": "服务器端发生错误, 已强制断线",
+            "Left due to unstable connection to the server": "与服务器的连接不稳定, 已自动断开连接",
+            "Left due to triggering server action rate limits": "动作过于频繁, 触发服务器端速率限制, 已强制断线",
             
             "Invalid join token. Try refreshing the page.": "无效的加入令牌. 请尝试刷新页面.",
             "Join token has expired. Try joining again. If you continue getting the same error, try refreshing the page and checking your Internet connection. If you're using a VPN, try disabling it or switching to a different VPN provider.": "加入令牌已过期. 请重新尝试加入. 如果你继续收到相同的错误, 请尝试刷新页面并检查你的网络连接. 如果你正在使用 VPN, 请尝试禁用它或切换到其他 VPN 提供商.",
@@ -1393,8 +1415,9 @@
             "{x} - boop action{n}": "{x} - 挥蹄{n}",
             "{x} - drop held item, even if the item is locked{n}": "{x} - 丢弃持有物品, 即使物品已锁定{n}",
             "{x} - drop held toy{n}": "{x} - 丢弃持有玩具{n}",
-            "{x} - drop held dish or stick, even if the item is locked, keeping the food if any{n}": "{x} - 丢弃持有的盘子/碟子/碗, 即使物品已锁定, 如有食物则保留{n}",
-            "{x} - drop held food on a dish or stick, even if the item is locked, keeping the dish or stick{n}": "{x} - 丢弃持有的盘子或棍子上的食物, 即使物品已锁定, 保留盘子或棍子{n}",
+            "{x} - drop held dish, pan, or stick, even if the item is locked, keeping the food if any{n}": "{x} - 丢弃持有的盘子, 锅或木棍, 即使物品已锁定, 如有食物则保留{n}",
+            "{x} - drop held dish or stick, even if the item is locked, keeping the food if any{n}": "{x} - 丢弃持有的盘子或木棍, 即使物品已锁定, 如有食物则保留{n}",
+            "{x} - drop held food on a dish or stick, even if the item is locked, keeping the dish or stick{n}": "{x} - 丢弃持有的盘子或木棍上的食物, 即使物品已锁定, 保留盘子或木棍{n}",
             "{x} - eat held item": "{x} - 吃掉持有物品",
             "{x} - locks held item to prevent losing it or accidentally picking up another item{n}": "{x} - 锁定持有物品以防止丢失或意外拾取其他物品{n}",
             "{x} - unlocks held item{n}": "{x} - 解锁持有物品{n}",
@@ -1634,7 +1657,7 @@
             "Are you sure you want to delete the current invite? The current code will no longer be valid even if you create a new invite.": "你确定要删除当前的邀请吗? 即使你创建新的邀请当前的代码也将不再有效.",
             "Expires in": "到期时间",
             "Expires:": "到期时限:",
-            "Join limit": "加入时限",
+            "Join limit:": "加入时限:",
             "Joined times:": "加入次数:",
             "Code:": "邀请代码:",
             "Confirm leave": "确认离开",
@@ -1644,6 +1667,7 @@
             "Are you sure you want to disband the whole party?": "你确定要解散整个派对吗?",
 
             "15 min": "15分钟",
+            "30 minutes": "30分钟",
             "30 minutes 1 second": "30分钟1秒",
             "{m} minutes {s} second": "{m} 分钟 {s} 秒",
             "3 hours": "3 小时",
@@ -1667,22 +1691,30 @@
 
             "a minute ago{x}": "1 分钟前{x}",
             "a min ago{x}": "1 分钟前{x}",
+            "{value} a minute ago{x}": "{value} 1 分钟前{x}",
+            "{value} a min ago{x}": "{value} 1 分钟前{x}",
             "{value} minutes ago{x}": "{value} 分钟前{x}",
             "{value} mins ago{x}": "{value} 分钟前{x}",
 
             "an hour ago{x}": "1 小时前{x}",
             "an hr ago{x}": "1 小时前{x}",
+            "{value} an hour ago{x}": "{value} 1 小时前{x}",
+            "{value} an hr ago{x}": "{value} 1 小时前{x}",
             "{value} hours ago{x}": "{value} 小时前{x}",
             "{value} hrs ago{x}": "{value} 小时前{x}",
 
             "a day ago{x}": "1 天前{x}",
+            "{value} day ago{x}": "{value} 天前{x}",
             "{value} days ago{x}": "{value} 天前{x}",
 
             "a month ago{x}": "1 月前{x}",
+            "{value} month ago{x}": "{value} 月前{x}",
             "{value} months ago{x}": "{value} 月前{x}",
 
             "a year ago{x}": "1 年前{x}",
             "a yr ago{x}": "1 年前{x}",
+            "{value} year ago{x}": "{value} 年前{x}",
+            "{value} yr ago{x}": "{value} 年前{x}",
             "{value} years ago{x}": "{value} 年前{x}",
             "{value} yrs ago{x}": "{value} 年前{x}",
 
@@ -1941,7 +1973,7 @@
             const DISALLOWED_PARENT_TAGS = ['SPAN']; //要过滤父级的标签
             const ALLOWED_PARENT_TAGS = ['LI']; //要通过的父级标签
             const DISALLOWED_CLASSES = ['chat-log-scroll-inner', 'chat-line', 'chat-box-type', 'chat-box-type-name', 'friends-item-name', 'friends-item-account', 'account-name', 'character-name', 'party-name'];
-            const ALLOWED_PARENT_CLASSES = ['modal-title', 'plush-header', 'text-truncate'];
+            const ALLOWED_PARENT_CLASSES = ['modal-title', 'changelog-short', 'plush-header', 'text-truncate'];
 
             if (node?.nodeType === Node.ELEMENT_NODE) {
                 if (DISALLOWED_TAGS.includes(node.tagName)) {
